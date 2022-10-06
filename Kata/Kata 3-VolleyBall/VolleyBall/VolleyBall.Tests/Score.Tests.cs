@@ -73,39 +73,34 @@ public class ScoreTest
 
         Assert.True(isSetContinue);
     }
-/*
+
     [Fact]
     public void MatchFinishedOnFifthSet_With2PointDiff()
     {
         //Arrange
         
-        _sut.NewSet(_teams[0].GetId(),_teams);
+        _sut.GetSets().Add(new Set(_teams.First().GetId(),_teams));
         for(int i =0; i<25;i++)
-            _sut.AddPoint(team);    
-        _sut.DefineWinnerSet();
+            _sut.AddPoint(_teams.First());    
 
-        _sut.NewSet(TeamID.team1);
+        _sut.GetSets().Add(new Set(_teams.First().GetId(),_teams));
         for(int i =0; i<25;i++)
-            _sut.AddPoint(team);    
-        _sut.DefineWinnerSet();
+            _sut.AddPoint(_teams.First());    
 
-        _sut.NewSet(TeamID.team2);
+        _sut.GetSets().Add(new Set(_teams[1].GetId(),_teams));
         for(int i =0; i<25;i++)
-            _sut.AddPoint(team2);       
-        _sut.DefineWinnerSet();
+            _sut.AddPoint(_teams[1]);       
 
-        _sut.NewSet(TeamID.team2);
+        _sut.GetSets().Add(new Set(_teams[1].GetId(),_teams));
         for(int i =0; i<25;i++)
-            _sut.AddPoint(team2);       
-        _sut.DefineWinnerSet();
+            _sut.AddPoint(_teams[1]);       
 
-        _sut.NewSet(TeamID.team1);
+        _sut.GetSets().Add(new Set(_teams[1].GetId(),_teams,true));
         for(int i =0; i<15;i++)
-            _sut.AddPoint(team);    
+            _sut.AddPoint(_teams.First());    
 
         for(int i =0; i<13;i++)
-            _sut.AddPoint(team2);       
-        _sut.DefineWinnerSet();
+            _sut.AddPoint(_teams[1]);       
 
         //Act
         var isSetContinue= _sut.IsSetCarryOn();
@@ -119,38 +114,36 @@ public class ScoreTest
     public void IsSetNotFinishedOnFifthSet_WithLess2PointDiff()
     {
         //Arrange
-        var team= new Team(TeamID.team1,100);
-        var team2= new Team(TeamID.team2,100);
+        
+        _sut.GetSets().Add(new Set(_teams.First().GetId(),_teams));
+        for(int i =0; i<25;i++)
+            _sut.AddPoint(_teams.First());    
 
-        _sut.NewSet(TeamID.team1);
+        _sut.GetSets().Add(new Set(_teams.First().GetId(),_teams));
         for(int i =0; i<25;i++)
-            _sut.AddPoint(team);    
-        _sut.DefineWinnerSet();
-        _sut.NewSet(TeamID.team1);
+            _sut.AddPoint(_teams.First());    
+
+        _sut.GetSets().Add(new Set(_teams[1].GetId(),_teams));
         for(int i =0; i<25;i++)
-            _sut.AddPoint(team);    
-        _sut.DefineWinnerSet();
-        _sut.NewSet(TeamID.team2);
+            _sut.AddPoint(_teams[1]);       
+
+        _sut.GetSets().Add(new Set(_teams[1].GetId(),_teams));
         for(int i =0; i<25;i++)
-            _sut.AddPoint(team2);       
-        _sut.DefineWinnerSet();
-        _sut.NewSet(TeamID.team2);
-        for(int i =0; i<25;i++)
-            _sut.AddPoint(team2);       
-        _sut.DefineWinnerSet();
-        _sut.NewSet(TeamID.team1);
+            _sut.AddPoint(_teams[1]);       
+
+        _sut.GetSets().Add(new Set(_teams[1].GetId(),_teams,true));
+        for(int i =0; i<35;i++)
+            _sut.AddPoint(_teams.First());    
 
         for(int i =0; i<36;i++)
-            _sut.AddPoint(team);    
-        for(int i =0; i<35;i++)
-            _sut.AddPoint(team2);       
+            _sut.AddPoint(_teams[1]);       
 
         //Act
         var isSetContinue= _sut.IsSetCarryOn();
-
+        var isMatchNotFinished= _sut.IsMatchNotFinished();
         //Assert
-
         Assert.True(isSetContinue);
+        Assert.True(isMatchNotFinished);
     }
 
     [Fact]
@@ -164,6 +157,6 @@ public class ScoreTest
 
         Assert.True(matchNotFinished);
     }
-    */
+    
 
 }
