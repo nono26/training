@@ -36,7 +36,7 @@ namespace VolleyBall.Core
         }
 
         public void DefineWinner(){
-                _winner= Point.Max().Key;
+                _winner= Point.Aggregate((x,y) => x.Value> y.Value? x: y).Key;
         }
 
         private bool TwoPointConditions(){
@@ -51,8 +51,8 @@ namespace VolleyBall.Core
         public string GetScore(){
             StringBuilder score= new StringBuilder();
             foreach(KeyValuePair<string,int>  team in Point)
-                score.Append($"{team.Key}:{team.Value} -");
-            score.Remove(score.Length-1,1);
+                score.Append($"[{team.Key}]:{team.Value} - ");
+            score.Remove(score.Length-2,2);
             return score.ToString();
         }
 

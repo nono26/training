@@ -7,7 +7,7 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/VolleyBall.csproj",
+                "${workspaceFolder}/VolleyBall/VolleyBall.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -19,7 +19,7 @@
             "type": "process",
             "args": [
                 "publish",
-                "${workspaceFolder}/VolleyBall.csproj",
+                "${workspaceFolder}/VolleyBall/VolleyBall.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -33,7 +33,7 @@
                 "watch",
                 "run",
                 "--project",
-                "${workspaceFolder}/VolleyBall.csproj"
+                "${workspaceFolder}/VolleyBall/VolleyBall.csproj"
             ],
             "problemMatcher": "$msCompile"
         }

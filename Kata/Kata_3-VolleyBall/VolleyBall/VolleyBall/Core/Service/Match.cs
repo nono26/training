@@ -14,6 +14,7 @@ namespace VolleyBall.Core
                 teams.Add(new Team(teamConfig.Id, teamConfig.ProbabilityTeam));
             }
             Score= new Score(teams);
+            _currentTeamServicingId= teams.First().GetId();
 
         }
 
