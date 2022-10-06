@@ -1,0 +1,1 @@
+3. When you **Analyze** a **Contract**, the **FraudDetector** is called. If a fraud is detected, we add a **Fraud** violation.

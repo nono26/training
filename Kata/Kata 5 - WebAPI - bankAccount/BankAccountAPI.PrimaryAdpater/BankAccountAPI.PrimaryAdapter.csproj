@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="11.1.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BankAccountAPI.PrimaryPort\BankAccountAPI.PrimaryPort.csproj" />
+    <ProjectReference Include="..\BankAccountAPI.Business\BankAccountAPI.Business.csproj" />
+    <ProjectReference Include="..\BankAccountAPI.SecondaryPort\BankAccountAPI.SecondaryPort.csproj" />
+    <ProjectReference Include="..\BankAccountAPI.SecondaryAdapter\BankAccountAPI.SecondaryAdapter.csproj" />
+  </ItemGroup>
+
+</Project>

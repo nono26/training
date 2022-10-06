@@ -1,0 +1,1 @@
+1. Implement a **ContractAnalyzer**, that contains a collection of **Violations**. By default this collection is empty.

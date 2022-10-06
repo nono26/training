@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2026
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Yuc.Contract.Business", "Yuc.ContractAnalyzer\Yuc.Contract.Business.csproj", "{FD911602-A26F-4EF1-AE48-CB27F3FAD08B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{EDF753DB-CCF6-4BE8-AE61-EAC19EEAC20D}"
+	ProjectSection(SolutionItems) = preProject
+		ReadMe.md = ReadMe.md
+		TODO 1.md = TODO 1.md
+		TODO 2.md = TODO 2.md
+		TODO 3.md = TODO 3.md
+		TODO 4.md = TODO 4.md
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Yuc.Contract.Business.Tests", "Yuc.ContractAnalyzer.Tests\Yuc.Contract.Business.Tests.csproj", "{17B3310C-A6FF-46C5-A673-C0D8F10D3E93}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExternalLib.PulledFromNuget.FraudDetection", "Yuc.FraudDetection\ExternalLib.PulledFromNuget.FraudDetection.csproj", "{82BF37CD-E20C-4CE9-BD87-C5D9DBA0FFD4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FD911602-A26F-4EF1-AE48-CB27F3FAD08B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD911602-A26F-4EF1-AE48-CB27F3FAD08B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD911602-A26F-4EF1-AE48-CB27F3FAD08B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD911602-A26F-4EF1-AE48-CB27F3FAD08B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17B3310C-A6FF-46C5-A673-C0D8F10D3E93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17B3310C-A6FF-46C5-A673-C0D8F10D3E93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17B3310C-A6FF-46C5-A673-C0D8F10D3E93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17B3310C-A6FF-46C5-A673-C0D8F10D3E93}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82BF37CD-E20C-4CE9-BD87-C5D9DBA0FFD4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82BF37CD-E20C-4CE9-BD87-C5D9DBA0FFD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82BF37CD-E20C-4CE9-BD87-C5D9DBA0FFD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82BF37CD-E20C-4CE9-BD87-C5D9DBA0FFD4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {23CFB400-9834-494D-AB60-8B59FEDA8AA5}
+	EndGlobalSection
+EndGlobal

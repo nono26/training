@@ -1,0 +1,1 @@
+4. If you had to add another 10 controls during analysis, how would the **ContractAnalyzer** evolve?
