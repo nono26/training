@@ -4,7 +4,7 @@ namespace Services
 {
     public static class BasicAlgo
     {
-        public static void Main()    
+        public static void Main(string[] args)    
         {    
                     //Write Program to find fibonacci series for given number    
                     for (int i = 0; i < 10; i++)    
@@ -298,5 +298,9 @@ namespace Services
                     }    
                     return false;    
         }   
+
+        public static double GetNthRoot(double number, int n){
+            return 0;
+        }
     } 
 }
