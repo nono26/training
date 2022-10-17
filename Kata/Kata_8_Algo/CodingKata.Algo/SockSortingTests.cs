@@ -4,7 +4,13 @@ namespace CodingKata.Algo
     {
         public int[] SortSocks(int[] arr)
         {
-            return Array.Empty<int>();
+            List<int> result= new List<int>();
+            foreach(int myValue in arr){
+                if(!(arr.Where(i=> i== myValue).Count() % 2 == 0  )){
+                    result.Add(myValue);
+                }
+            }
+            return result.ToArray();        
         }
 
         [Test]
