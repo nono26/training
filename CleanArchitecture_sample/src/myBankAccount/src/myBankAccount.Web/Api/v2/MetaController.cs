@@ -1,8 +1,10 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 
-namespace myBankAccount.Web.Api;
+namespace myBankAccount.Web.Api.V2;
 
+[Route("v{version:apiVersion}/[controller]")]
+[ApiVersion("2.0")]
 public class MetaController : BaseApiController
 {
   /// <summary>

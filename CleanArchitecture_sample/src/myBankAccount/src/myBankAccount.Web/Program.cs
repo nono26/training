@@ -7,6 +7,10 @@ using myBankAccount.Infrastructure.Data;
 using myBankAccount.Web;
 using Microsoft.OpenApi.Models;
 using Serilog;
+using Microsoft.AspNetCore.Mvc.ApiExplorer;
+using Microsoft.Extensions.Options;
+using Swashbuckle.AspNetCore.SwaggerGen;
+using myBankAccount.Web.infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -21,11 +25,21 @@ builder.Services.AddDbContext(connectionString);
 
 builder.Services.AddControllers();
 
-builder.Services.AddSwaggerGen(c =>
+builder.Services.AddApiVersioning(options =>
 {
-  c.SwaggerDoc("v1", new OpenApiInfo { Title = "My API", Version = "v1" });
-  c.EnableAnnotations();
+  options.ReportApiVersions = true;
+  //options.ApiVersionReader = new UrlSegmentApiVersionReader();
 });
+builder.Services.AddVersionedApiExplorer(options =>
+{
+  options.GroupNameFormat = "'v'VV";
+  options.SubstituteApiVersionInUrl = true;
+});
+
+builder.Services.AddTransient<IConfigureOptions<SwaggerGenOptions>, SwaggerGenConfigurationOptions>();
+builder.Services.AddSwaggerGen();
+
+
 
 // add list services for diagnostic purposes - see https://github.com/ardalis/AspNetCoreStartupServices
 builder.Services.Configure<ServiceConfig>(config =>
@@ -63,7 +77,18 @@ app.UseStaticFiles();
 app.UseSwagger();
 
 // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.), specifying the Swagger JSON endpoint.
-app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1"));
+
+app.UseSwaggerUI(c => 
+  {
+  var provider = builder.Services.BuildServiceProvider().GetRequiredService<IApiVersionDescriptionProvider>();
+
+  foreach (var desc in provider.ApiVersionDescriptions)
+    {
+      c.SwaggerEndpoint($"/swagger/{desc.GroupName}/swagger.json", desc.GroupName.ToUpperInvariant());
+    }
+  }  
+);
+
 
 app.UseEndpoints(endpoints =>
 {

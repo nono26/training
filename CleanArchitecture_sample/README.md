@@ -5,6 +5,9 @@ https://github.com/ardalis/cleanarchitecture
 Exercise from :
 https://gitlab.com/exalt-it-dojo/katas-c-sharp/-/blob/main/BankAccount/README.md
 
+webapi version with swagger
+https://jones.bz/web-api-versioning-with-swagger/
+
 Framework: .net 6
 
 To build it :
