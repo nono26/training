@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk.Worker">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>dotnet-MeterReadingClient-86a1080a-ecd2-4f8d-a998-f4267af13695</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Google.Protobuf" Version="3.22.3" />
+    <PackageReference Include="Grpc.Net.Client" Version="2.52.0" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="7.0.1" />
+  </ItemGroup>
+  <ItemGroup>
+  <Protobuf Include="../meterservice.proto" GrpcServices="Client" />
+</ItemGroup>
+</Project>

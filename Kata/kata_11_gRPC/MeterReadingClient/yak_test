@@ -1,0 +1,73 @@
+proto < ./meterservice.proto
+@host=localhost:7042
+
+###
+
+GRPC /MeterReaderService/AddReading
+{
+  "greeting": "world"
+}
+
+GRPC /hello.HelloService/LotsOfReplies
+{
+  "greeting": "world"
+}
+
+
+GRPC /hello.HelloService/lotsOfGreetings
+{
+  "greeting": "world."
+}
+
+{{@streaming
+
+  async function writeStream(){
+    await sleep(1000);
+    $requestClient.send({
+      greeting: 'How are you?',
+    });
+    await sleep(1000);
+    $requestClient.send({
+      greeting: 'I can stream.',
+    });
+  }
+  exports.waitPromise = writeStream();
+}}
+
+GRPC /hello.HelloService/BidiHello
+{
+  "greeting": "world"
+}
+
+{{@streaming
+
+  async function writeStream(){
+    await sleep(1000);
+    $requestClient.send({
+      greeting: ', how are you?',
+    });
+    await sleep(1000);
+    $requestClient.send({
+      greeting: ', I can stream.',
+    });
+  }
+  exports.waitPromise = writeStream();
+}}
+
+
+
+###
+
+GRPC /grpcbin.GRPCBin/SpecificError
+{
+  "code": 4,
+  "reason": "Meaning of life"
+}
+GRPC /grpcbin.GRPCBin/RandomError
+{
+  "fString": "bar"
+}
+GRPC /grpcbin.GRPCBin/HeadersUnary
+
+
+GRPC /grpcbin.GRPCBin/NoResponseUnary
